@@ -1,0 +1,36 @@
+.remind-add,.remind-card{
+  margin: 16px;
+}
+.remind-card {
+  background: white;
+  padding: 30rpx;
+  border-radius: 10rpx;
+  box-shadow: 0 6rpx 12rpx rgba(0, 0, 0, 0.1);
+}
+
+.remind-card-opt {
+  color: white;
+  font-size: 12px;
+  height: 100%;
+  display: flex;
+}
+
+.remind-card-opt-edit,.remind-card-opt-del{
+  height: 100%;
+  display: flex;
+  align-items: center;
+  width:40px;
+  justify-content: center;
+}
+.remind-card-opt-edit {
+  background: orange;
+}
+.remind-card-opt-del {
+  background: red;
+}
+.collectBox{
+  position: absolute;
+  width: 30px;
+  height:30px;
+  background:red;
+}

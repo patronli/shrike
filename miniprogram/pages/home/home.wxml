@@ -1,0 +1,5 @@
+<!--index.wxml-->
+<view class="container">
+  <van-button type="primary">主页</van-button>
+
+</view>

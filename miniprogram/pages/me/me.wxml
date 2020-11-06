@@ -1,0 +1,5 @@
+<!--index.wxml-->
+<view class="container">
+  <van-button type="primary">我</van-button>
+
+</view>

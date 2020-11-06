@@ -1,0 +1,62 @@
+{
+  "pages": [
+    "pages/remind/remind",
+    "pages/home/home",
+    "pages/me/me",
+   
+   
+    "pages/index/index",
+    "pages/userConsole/userConsole",
+    "pages/storageConsole/storageConsole",
+    "pages/databaseGuide/databaseGuide",
+    "pages/addFunction/addFunction",
+    "pages/deployFunctions/deployFunctions",
+    "pages/chooseLib/chooseLib",
+    "pages/openapi/openapi",
+    "pages/openapi/serverapi/serverapi",
+    "pages/openapi/callback/callback",
+    "pages/openapi/cloudid/cloudid",
+    "pages/im/im",
+    "pages/im/room/room"
+  ],
+  "window": {
+    "backgroundColor": "#F6F6F6",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#F6F6F6",
+    "navigationBarTitleText": "伯劳日程",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#bfbfbf",
+    "selectedColor": "#e8989a",
+    "borderStyle": "black",
+    "list": [{
+      "pagePath": "pages/home/home",
+      "text": "首页",
+      "iconPath": "images/home.png",
+      "selectedIconPath": "images/home.png"
+    },{
+      "pagePath": "pages/remind/remind",
+      "text": "日程",
+      "iconPath": "images/remind.png",
+      "selectedIconPath": "images/remind.png"
+    },{
+      "pagePath": "pages/me/me",
+      "text": "我的",
+      "iconPath": "images/me.png",
+      "selectedIconPath": "images/me.png"
+    }
+  ]
+  },
+  "sitemapLocation": "sitemap.json",
+  
+  "usingComponents": {
+    "van-button": "@vant/weapp/button",
+    "van-dialog": "@vant/weapp/dialog",
+    "van-field": "@vant/weapp/field",
+    "van-calendar" : "@vant/weapp/calendar",
+    "van-swipe-cell": "@vant/weapp/swipe-cell"
+  }
+
+  
+}
