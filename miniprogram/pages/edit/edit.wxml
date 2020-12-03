@@ -1,0 +1,92 @@
+<!--index.wxml-->
+<view >
+  <van-notice-bar
+  left-icon="volume-o"
+  color="#87CEEB"
+  background="#FFFFFF"
+  text="具体提醒时间是提醒日当日上午九点整通过微信消息给您发送，届时请注意查看！"
+/>
+  <van-grid column-num="1" border="{{ false }}">
+  <van-grid-item use-slot wx:for="{{ 1 }}" wx:for-item="index">
+    <image
+      style="width: 100%; height: 145px;"
+      src="../../images/bg1.png"
+    />
+  </van-grid-item>
+</van-grid>
+  <van-calendar show="{{ show }}" bind:close="onClose" bind:confirm="onConfirm" color="#87CEEB"  min-date="{{ minDate }}" round="false" title="提醒时间"   max-date="{{ maxDate }}" />
+  <van-cell-group>
+    <!--标题-->
+    <van-cell>
+      <view slot="title">
+        <view class="van-cell-text">
+         <text class="iconfont iconfont-color iconbt"></text>
+          日程名称
+        </view>
+      </view>
+      <input  placeholder="请输入用户名" value="{{ remindName }}" bind:change="remindChange"/>
+    </van-cell>
+    <!--时间-->
+    <van-cell value="{{ date }}"  bind:click="onDisplay" >
+      <view slot="title">
+        <view class="van-cell-text">
+         <text class="iconfont iconfont-color iconrq"></text>
+          提醒时间
+        </view>
+      </view>
+      <van-icon slot="right-icon"  class="iconfont iconfont-color iconxjt" />
+    </van-cell>
+    <!--日程类型-->
+    <picker bindchange="bindTypeChange" value="{{index}}" range="{{arrayRemind}}">
+    <view class="picker">
+      <van-cell value="{{arrayRemind[index]}}" >
+      <view slot="title">
+        <view class="van-cell-text">
+         <text class="iconfont iconfont-color iconlx"></text>
+          日程类型
+        </view>
+      </view>
+      <van-icon slot="right-icon"  class="iconfont iconfont-color iconxjt" />
+    </van-cell>
+    </view>
+  </picker>
+   <!--循环提醒-->
+    <picker bindchange="bindLoopChange" value="{{loopIndex}}" range="{{arrayLoop}}">
+    <view class="picker">
+      <van-cell value="{{arrayLoop[loopIndex]}}">
+      <view slot="title">
+        <view class="van-cell-text">
+         <text class="iconfont iconfont-color iconxh1"></text>
+          循环提醒
+        </view>
+      </view>
+      <van-icon slot="right-icon"  class="iconfont iconfont-color iconxjt" />
+    </van-cell>
+    </view>
+  </picker>
+
+  <van-cell >
+      <view slot="title">
+        <view class="van-cell-text">
+         <text class="iconfont iconfont-color iconxin1"></text>
+          重要程度
+        </view>
+      </view>
+      <van-rate value="{{ importantValue }}" size="{{ 25 }}" allow-half color="#87CEEB" void-color="#eee"   icon="like"
+  void-icon="like-o" bind:change="onChangeImportant"/>
+    </van-cell>
+  <!--设为封面-->
+    <van-cell >
+      <view slot="title">
+        <view class="van-cell-text">
+         <text class="iconfont iconfont-color iconzd"></text>
+          设为封面 
+        </view>
+      </view>
+      <view>      
+        <van-switch checked="{{ checked }}" size="24px"   active-color="#87CEEB" bind:change="onChange" />
+      </view>
+    </van-cell>
+  </van-cell-group>
+  <van-button type="primary" block  color="#87CEEB" bind:click="saveRemind">添加日程</van-button>
+</view>

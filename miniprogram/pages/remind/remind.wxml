@@ -1,78 +1,22 @@
 <!--index.wxml-->
 
-<view>
-
+<view>  
   <van-swipe-cell id="swipe-cell" right-width="{{ 95 }}" left-width="{{ 0 }}" wx:for="{{reminds}}" wx:key="_id">
-    <view class="remind-card"> {{item.title}}　　　　 {{item.date}}     {{item.type}}</view>
-
+    <view class="remind-card"> <van-cell center title="{{item.title}}" value="{{item.date}}" label="剩余时间" /></view>
     <view slot="right" class="remind-card-opt">
-      <text class="remind-card-opt-edit" data-remind-name="{{item.title}}" data-remind-id="{{item._id}}" 
-      data-remind-date="{{item.date}}"   data-remind-type="{{item.type}}" 
-      bindtap="remindDialogShow">编辑</text>
+      <text class="remind-card-opt-edit" data-remind-id="{{item._id}}" bindtap="remindDialogShow">编辑</text>
       <text class="remind-card-opt-del" data-remind-id="{{item._id}}" bindtap="remindDelConfirm">删除</text>
     </view>
   </van-swipe-cell>
-
-  <view class="remind-add" scale-area="true">
-    <van-button type="warning" bindtap="remindDialogShow"> + 添加提醒</van-button>
-  </view>
-  <van-button type="default">默认按钮</van-button>
-<van-button type="primary">主要按钮</van-button>
-<van-button type="info">信息按钮</van-button>
-<van-button type="warning">警告按钮</van-button>
-<van-button type="danger">危险按钮</van-button>
-  <view>
-    <van-cell title="选择单个日期" value="{{ date }}" bind:click="onDisplay" />
-  <van-calendar show="{{ show }}" bind:close="onClose" bind:confirm="onConfirm" />
-  </view>
-
-  <!-- 拖拽框 -->
-  <view class='collectBox' 
-    bindtap='collectBox' 
-    wx:if="{{write[0]+write[1] > 0}}" 
-    bindtouchmove="touchmove" 
-    catch:touchmove 
-    style="left:{{write[0]}}px;top:{{write[1]}}px;">
-    <!--<image src='../../images/add.png'></image> -->
-</view>
+  <!-- <van-calendar
+  color="#87CEEB"
+  show-title="{{ false }}"
+  poppable="{{ false }}"
+  show-confirm="{{ false }}"
+  class="calendar"
+/> -->
+<drag></drag>
 
 </view>
 
-<!--提醒添加、修改-->
-
-<van-dialog use-slot asyncClose="true" title="请填编辑日程详情" 
-cancelButtonText= "取消"  confirmButtonText= "确认"
-show="{{ dialogShow }}" show-cancel-button bind:cancel="remindDialogClose" bind:confirm="saveRemind">
-  <van-cell-group>
-    <!--事件名称-->
-    <van-field value="{{ remindName }}" placeholder="请输入日程名称" bind:change="remindChange" />
-    <!--时间-->
-    
-    
-    <!-- <picker mode="date"  bindchange="bindDateChange" >
-      <view class="picker">
-      <van-field value="{{ remindDate }}" disabled="true"  placeholder="请选择提醒时间 " />
-      </view>
-  </picker> -->
-<!--事件类型-->
-  <picker bindchange="bindTypeChange" value="{{index}}" range="{{arrayRemind}}">
-    <view class="picker">
-      <van-field value="{{arrayRemind[index]}}" disabled="true"  placeholder="请选择事件类型 "/>
-    </view>
-  </picker>
-  <!--设为封面-->
-  <picker bindchange="bindCoverChange" value="{{coverIndex}}" range="{{arrayCover}}">
-    <view class="picker">
-      <van-field value="{{arrayCover[coverIndex]}}" disabled="true" placeholder="是否设为首页封面 "/>
-    </view>
-  </picker>
-  <!--是否循环-->
-  <picker bindchange="bindLoopChange" value="{{loopIndex}}" range="{{arrayLoop}}">
-    <view class="picker">
-      <van-field value="{{arrayLoop[loopIndex]}}" disabled="true" placeholder="是否循环 "/>
-    </view>
-  </picker>
-  </van-cell-group>
-</van-dialog>
-
-<van-dialog id="van-dialog" />
+ 

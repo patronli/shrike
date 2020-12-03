@@ -1,9 +1,9 @@
 {
   "pages": [
     "pages/remind/remind",
+    "pages/edit/edit",
     "pages/home/home",
     "pages/me/me",
-   
    
     "pages/index/index",
     "pages/userConsole/userConsole",
@@ -55,7 +55,19 @@
     "van-dialog": "@vant/weapp/dialog",
     "van-field": "@vant/weapp/field",
     "van-calendar" : "@vant/weapp/calendar",
-    "van-swipe-cell": "@vant/weapp/swipe-cell"
+    "van-swipe-cell": "@vant/weapp/swipe-cell",
+    "van-nav-bar": "@vant/weapp/nav-bar",
+    "van-switch": "@vant/weapp/switch",
+    "van-action-sheet": "@vant/weapp/action-sheet",
+    "van-cell": "@vant/weapp/cell",
+    "van-cell-group": "@vant/weapp/cell-group",
+    "van-row": "@vant/weapp/row",
+    "van-col": "@vant/weapp/col",
+    "van-icon": "@vant/weapp/icon",
+    "van-grid": "@vant/weapp/grid",
+    "van-grid-item": "@vant/weapp/grid-item",
+    "van-notice-bar": "@vant/weapp/notice-bar",
+    "van-rate": "@vant/weapp/rate"
   }
 
   

@@ -1,0 +1,16 @@
+<!--index.wxml-->
+<view>
+<movable-area class='movable-box' >
+    <movable-view
+      class='movable-btn'
+      x='{{x}}'
+      y='{{y}}'
+      direction='all'
+     >
+      <navigator url="../edit/edit?title=navigate" hover-class="none">   
+        <image src="../../images/add.png" class="movable-img" bindtap="toAdd"></image>
+      </navigator>
+    </movable-view>
+  </movable-area>
+</view>
+<slot/>
